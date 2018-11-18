@@ -1,0 +1,73 @@
+---
+title: "Understand float property"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css basic"]
+---
+<div class="container">
+
+    <div class="bg-info block">
+        <p>HTML normally flows from the top of the browser window down to the bottom, one headline, paragraph, or block-level element on top of another. This word-processor&ndash;like display is visually boring (<a class="xref" title="Figure&nbsp;7-15.&nbsp;The regular flow of HTML is left to right, top to bottom, with one block-level element&mdash;headline, paragraph, div, and so on&mdash;stacked on top of the next. By letting you break up this uniformity, the float property is one of CSS&rsquo;s most powerful tools. Its uses range from simply moving an image to one side of a paragraph to providing complete layout control over banners, sidebars, navigation bars, and other page elements." href="https://www.safaribooksonline.com/library/view/CSS3:+The+Missing+Manual,+3rd+Edition/9781449339456/ch07.html#the_regular_flow_of_html_is_left_to_righ">Figure</a>, top), but with CSS, you&rsquo;re far from stuck with it. You&rsquo;ll learn lots of new methods for arranging items on a web page in Part 3, but you can spice up your pages plenty with one little CSS property&mdash;<code class="literal">float</code>.</p>
+        <p>The <code class="literal">float</code> property moves an element to either the left or right. In the process, content below the floated element moves up and wraps around the float (<a class="xref" title="Figure&nbsp;7-15.&nbsp;The regular flow of HTML is left to right, top to bottom, with one block-level element&mdash;headline, paragraph, div, and so on&mdash;stacked on top of the next. By letting you break up this uniformity, the float property is one of CSS&rsquo;s most powerful tools. Its uses range from simply moving an image to one side of a paragraph to providing complete layout control over banners, sidebars, navigation bars, and other page elements." href="https://www.safaribooksonline.com/library/view/CSS3:+The+Missing+Manual,+3rd+Edition/9781449339456/ch07.html#the_regular_flow_of_html_is_left_to_righ">Figure</a>, bottom). Floating elements are ideal for moving supplemental information out of the way of the page&rsquo;s main text. Images can move to either edge, letting text wrap elegantly around them. Similarly, you can shuttle a sidebar of related information and links off to one side.</p>
+    </div>
+
+    <img src="../img/float.png" class="block"/>
+
+    <div class="bg-info block">
+        <p>Although you can use floats in some complex (and confusing) ways, the basic property is very simple. It takes one of three keywords&mdash;<code class="literal">left, right</code> or <code class="literal">none</code>&mdash;like so:</p>
+        <div class="itemizedlist">
+            <ul class="itemizedlist">
+                <li class="listitem">
+                    <p><strong class="userinput"><code>left</code></strong>. Slides the styled element to the left while content below wraps around the right side of the element.</p>
+                </li>
+                <li class="listitem">
+                    <p><strong class="userinput"><code>right</code></strong>. Slides the element to the right.</p>
+                </li>
+                <li class="listitem">
+                    <p><strong class="userinput"><code>none</code></strong>. Turns off the float and returns the object to its normal position.</p>
+                </li>
+            </ul>
+        </div>
+        <p>Floated elements move to the left or right edge of their <span class="emphasis"><em>containing element</em></span>. In some cases, this just means that the element moves to the left or right edge of the browser window. However if you float an element that&rsquo;s inside another tag with a set width or position on a web page, then the float will go to the left or right edge of that tag&mdash;the floated element&rsquo;s &ldquo;container.&rdquo; For example, you may have a box on the page that&rsquo;s 300 pixels wide and is itself floated to the right edge of the browser window. Inside that box, you&rsquo;ve got an image that floats to the left. That image slides to the left edge of that 300-pixel-wide box&mdash;not the left edge of the browser window.</p>
+
+        <p>Usage Example:</p>
+        <code>
+            float: left;
+        </code>
+
+    </div>
+
+    <div class="bg-danger block">
+        <h3 class="title">Note</h3>
+        You can even use the float property with an inline element, such as the <img> tag. In fact, floating a photo to the left or right using CSS is a very common use of the float property. A web browser treats a floated inline element just like a block-level element, so you don’t run into the problems with padding and margin that normally trouble inline elements
+    </div>
+
+    <div class="bg-danger block">
+        When you float block-level elements, you should also set the width property for that element (in fact, CSS rules require setting the width for floated elements for all tags except images). This way, you can control how much horizontal space the block takes up and how much space is available for the content below it to move up and wrap around the block.
+    </div>
+
+    <div class="block bg-info">
+        <h2> Clear property </h2>
+
+        <p>The <code class="literal">clear</code> property instructs an element to <span class="emphasis"><em>not wrap</em></span> around a floated item. By clearing an element, you essentially force it to drop down below the floated item. Also, you can control which type of float (left or right) is cleared or force a style to simply ignore both types of floats.</p>
+        <p>The <code class="literal">clear</code> property accepts the following options:</p>
+        <div class="itemizedlist">
+            <ul class="itemizedlist">
+                <li class="listitem">
+                    <p><strong class="userinput"><code>left</code></strong>. The style will drop below elements that are floated left but will still wrap around right-floated objects.</p>
+                </li>
+                <li class="listitem">
+                    <p><strong class="userinput"><code>right</code></strong>. Forces a drop below right-floated objects but still wraps around left-floated objects.</p>
+                </li>
+                <li class="listitem">
+                    <p><strong class="userinput"><code>both</code></strong>. Forces a drop below both left- and right-floated elements.</p>
+                </li>
+                <li class="listitem">
+                    <p><strong class="userinput"><code>none</code></strong>. Turns off clearing altogether. In other words, it makes an item wrap around both left- and right-floated objects, which is how web browsers normally work.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

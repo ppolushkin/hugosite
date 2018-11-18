@@ -1,0 +1,453 @@
+---
+title: "Основные формулы комбинаторики"
+date: 2018-05-01
+draft: false
+categories: ["Математика"]
+---
+
+<H2><A NAME="subsec1.1"></A>
+    <A NAME="SECTION000210">&#167;&nbsp;1.&nbsp;Основные формулы комбинаторики</A></H2>
+<Div class="text">В данном разделе мы займёмся подсчётом числа &#171;шансов&#187;. О числе шансов говорят, когда
+    возможно несколько результатов
+    какого-либо действия (извлечение карты из колоды, подбрасывание кубика или
+    монетки). Число шансов&nbsp;&#151; это число способов проделать это действие или, что то же самое, число возможных
+    результатов
+    этого действия.
+</Div>
+<A NAME="subsubsec1.1.I"></A><A NAME="165"></A>
+<H3><A NAME="SECTION000211">Теорема о перемножении шансов</A></H3>
+<Div class="text">Пусть одно действие можно проделать пятью способами, а другое&nbsp;&#151; двумя.
+    Каким числом способов можно проделать пару этих действий?
+</Div>
+<div class="teor"><B>Теорема 1. </B><A NAME="th1"></A>
+    Пусть множество <IMG ALIGN="bottom" WIDTH="15" HEIGHT="14"
+                         SRC="../comb_files/img1.gif"> состоит из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                                    SRC="../comb_files/img2.gif"> элементов: <IMG
+            ALIGN="absmiddle" WIDTH="129" HEIGHT="20"
+            SRC="../comb_files/img3.gif">, а множество <IMG ALIGN="bottom" WIDTH="17" HEIGHT="14"
+                                                         SRC="../comb_files/img4.gif">&nbsp;&#151; из <IMG ALIGN="bottom"
+                                                                                                        WIDTH="18"
+                                                                                                        HEIGHT="14"
+                                                                                                        SRC="../comb_files/img5.gif">
+    элементов: <IMG ALIGN="absmiddle" WIDTH="131" HEIGHT="20"
+                    SRC="../comb_files/img6.gif">.
+    Тогда можно образовать ровно <IMG ALIGN="bottom" WIDTH="27" HEIGHT="14"
+                                      SRC="../comb_files/img7.gif"> пар <IMG ALIGN="absmiddle" WIDTH="53" HEIGHT="21"
+                                                                          SRC="../comb_files/img8.gif">, взяв
+    первый элемент из множества <IMG ALIGN="bottom" WIDTH="15" HEIGHT="14"
+                                     SRC="../comb_files/img1.gif">, а второй&nbsp;&#151; из множества <IMG ALIGN="bottom"
+                                                                                                        WIDTH="17"
+                                                                                                        HEIGHT="14"
+                                                                                                        SRC="../comb_files/img4.gif">.
+</Div>
+<div class="remark"><B>Замечание 1.</B>
+    <A NAME="re1"></A>Можно сформулировать утверждение <A HREF="node3.html#th1">теоремы 1</A> так: если первый элемент
+    можно выбрать <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14" SRC="../comb_files/img2.gif"> способами, а второй элемент&nbsp;&#151;&nbsp;<IMG
+            ALIGN="bottom" WIDTH="18" HEIGHT="14"
+            SRC="../comb_files/img5.gif"> способами,
+    то пару элементов можно выбрать <IMG ALIGN="bottom" WIDTH="27" HEIGHT="14"
+                                         SRC="../comb_files/img7.gif"> способами.
+</Div>
+<Div class="proof"><B>Доказательство.</b> С элементом <IMG ALIGN="absmiddle" WIDTH="19" HEIGHT="17"
+                                                           SRC="../comb_files/img9.gif"> мы можем образовать <IMG
+        ALIGN="bottom" WIDTH="18" HEIGHT="14"
+        SRC="../comb_files/img5.gif"> пар:
+    <IMG ALIGN="absmiddle" WIDTH="177" HEIGHT="20"
+         SRC="../comb_files/img10.gif">.
+    Столько же пар можно составить с элементом <IMG ALIGN="absmiddle" WIDTH="19" HEIGHT="17"
+                                                    SRC="../comb_files/img11.gif">, столько же&nbsp;&#151; с элементом
+    <IMG ALIGN="absmiddle" WIDTH="19" HEIGHT="17"
+         SRC="../comb_files/img12.gif"> и&nbsp;с&nbsp;любым другим из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                                        SRC="../comb_files/img2.gif"> элементов множества&nbsp;<IMG
+            ALIGN="bottom" WIDTH="15" HEIGHT="14"
+            SRC="../comb_files/img1.gif">.
+    Т.е. всего возможно <IMG ALIGN="bottom" WIDTH="27" HEIGHT="14"
+                             SRC="../comb_files/img7.gif"> пар, в которых первый элемент выбран из&nbsp;множества <IMG
+            ALIGN="bottom" WIDTH="15" HEIGHT="14"
+            SRC="../comb_files/img1.gif">, а второй&nbsp;&#151; из множества <IMG ALIGN="bottom" WIDTH="17" HEIGHT="14"
+                                                                               SRC="../comb_files/img4.gif">.<P
+            class="qed">QED</p></Div>
+<div class="exer"><B>Упражнение 1. </B>
+    <A NAME="up1"></A>С помощью теоремы <A HREF="node3.html#th1">1</A> доказать, что:
+    <DL compact>
+        <DT>а)
+        <DD>при подбрасывании трёх монет возможно 2&#183;2&#183;2=8 различных результатов;
+        <DT>б)
+        <DD>бросая дважды игральную кость, получим 6&#183;6=36 различных результатов;
+        <DT>в)
+        <DD>трёхзначных чисел бывает 9&#183;10&#183;10=900;
+        <DT>г)
+        <DD>трёхзначных чисел, все цифры которых различны, существует 9&#183;9&#183;8;
+        <DT>д)
+        <DD>чётных трёхзначных чисел возможно 9&#183;10&#183;5.
+    </DL>
+</Div>
+<H3><A NAME="subsubsec1.1.II"></A><A NAME="181"></A><A NAME="SECTION000212">Урны и шарики</A></H3>
+<Div class="text">Есть урна (ящик), содержащая <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                    SRC="../comb_files/img18.gif"> пронумерованных объектов (шаров).
+    Мы выбираем из этой урны <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                  SRC="../comb_files/img2.gif"> шаров; результатом выбора является набор из <IMG
+            ALIGN="bottom" WIDTH="12" HEIGHT="14"
+            SRC="../comb_files/img2.gif"> шаров.
+    Нас интересует, сколькими
+    способами можно выбрать <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                 SRC="../comb_files/img2.gif"> шаров из <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                                          SRC="../comb_files/img18.gif">,
+    или сколько различных результатов может получиться.
+    На этот вопрос нельзя дать однозначный ответ, пока мы не определимся:
+    а) с тем, как организован выбор (можно ли шары
+    возвращать в урну), и б)
+    с тем, что понимается под различными результатами
+    выбора.
+    <P>Рассмотрим следующие возможные способы выбора.
+    <P>
+    <DL Compact>
+        <DT>1.
+        <DD>Выбор <I class="incide">с возвращением</i>:<A NAME="183"></A> каждый вынутый шар возвращается
+            в&nbsp;урну, каждый следующий шар выбирается из полной урны.
+            В&nbsp;полученном наборе из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                             SRC="../comb_files/img2.gif"> номеров шаров могут
+            встречаться одни и те же&nbsp;номера.
+        <DT>2.
+        <DD>Выбор <I class="incide">без возвращения</i>:<A NAME="184"></A> вынутые шары в урну не
+            возвращаются, и в полученном наборе не могут
+            встречаться одни и те же номера.
+    </DL>
+    <P>Условимся, какие результаты выбора (наборы
+        из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14" SRC="../comb_files/img2.gif"> номеров шаров) мы будем
+        считать различными. Есть ровно две возможности.
+    <P>
+        <DL Compact>
+            <DT>1.
+            <DD>Выбор <I class="incide">с учётом порядка</I>:<A NAME="187"></A>
+                два набора номеров шаров считаются различными, если они
+                отличаются составом или порядком номеров.
+                Так, при выборе трёх шаров из урны, содержащей 5 шаров,
+                наборы (1, 5, 2), (2, 5, 1) и (4, 4, 5) различны, если
+                порядок учитывается.
+            <DT>2.
+            <DD>Выбор <I class="incide">без учёта порядка</I>: <A NAME="188"></A>
+                два набора номеров шаров считаются различными, если они
+                отличаются составом. Наборы, отличающиеся лишь порядком
+                следования номеров, считаются одинаковыми.
+    <P>Так, наборы (1, 5, 2) и (2, 5, 1) не различаются и образуют один и тот же результат выбора, если порядок не
+        учитывается.
+        </DL>
+    <P>Подсчитаем, сколько возможно различных результатов
+        для каждой из четырёх схем выбора (выбор с возвращением или без,
+        и в каждом из этих случаев&nbsp;&#151; с учётом порядка или без).</Div>
+<div class="exer"><B>Упражнение 2. </B>
+    Перечислить все возможные результаты в каждой из четырёх схем при выборе
+    двух шаров из четырёх.
+    Например, при выборе с возвращением
+    и без учёта порядка: (1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4).
+</Div>
+
+<P>
+<H3><A NAME="SECTION000213">Выбор без возвращения, с учётом порядка (Размещение без повторений) </A>
+    <A NAME="193"></A><A NAME="194"></A></H3>
+
+Пример; Сколькими способами можно посадить 4 пассажира на 10 мест в самолете.
+<P>
+    <div class="teor"><B>Теорема 2. </B><A NAME="th2"></A>Общее количество различных наборов при выборе <IMG
+            ALIGN="bottom" WIDTH="12" HEIGHT="14"
+            SRC="../comb_files/img2.gif"> элементов из <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                         SRC="../comb_files/img18.gif"> без&nbsp;возвращения и с учётом
+        порядка равняется
+<P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="325" HEIGHT="55"
+                       SRC="../comb_files/img32.gif"></p>
+и называется <I class="incide">числом размещений</I> <A NAME="201"></A><A NAME="202"></A> из <IMG ALIGN="bottom"
+                                                                                                  WIDTH="13" HEIGHT="14"
+                                                                                                  SRC="../comb_files/img18.gif"
+> элементов по <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                    SRC="../comb_files/img2.gif"
+> элементов.</Div>
+<Div class="proof"><B>Доказательство.</b> Первый шар можно выбрать <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                                        SRC="../comb_files/img18.gif"> способами, его номер&nbsp;&#151;
+    любой из <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                  SRC="../comb_files/img18.gif"> возможных.
+    При любом выборе первого шара есть <IMG ALIGN="absmiddle" WIDTH="43" HEIGHT="17"
+                                            SRC="../comb_files/img33.gif"> способ выбрать второй шар.
+    По <A HREF="node3.html#th1">теореме 1</A>, число возможных пар
+    <P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="347" HEIGHT="40"
+                           SRC="../comb_files/img34.gif"></P>
+    <p>равно <IMG ALIGN="absmiddle" WIDTH="67" HEIGHT="20"
+                  SRC="../comb_files/img35.gif">. Для каждой такой пары есть <IMG ALIGN="absmiddle" WIDTH="43" HEIGHT="17"
+                                                                               SRC="../comb_files/img36.gif"> способа
+        выбрать третий шар.
+        По теореме&nbsp;<A HREF="node3.html#th1">1</A>, число возможных троек
+    <P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="546" HEIGHT="31"
+                           SRC="../comb_files/img37.gif">
+    </P>
+    <P>равно произведению числа пар <IMG ALIGN="absmiddle" WIDTH="67" HEIGHT="20"
+                                         SRC="../comb_files/img35.gif"> и числа способов выбора третьего шара, т.е.&nbsp;равно
+        <IMG ALIGN="absmiddle" WIDTH="121" HEIGHT="20"
+             SRC="../comb_files/img38.gif">. Продолжая рассуждения, получим, что
+        общее число возможных наборов из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                              SRC="../comb_files/img2.gif"
+        > шаров
+        равно <IMG ALIGN="absmiddle" WIDTH="197" HEIGHT="20"
+                   SRC="../comb_files/img39.gif">.
+        В этом произведении <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                 SRC="../comb_files/img2.gif"
+        > сомножителей последний множитель <IMG ALIGN="absmiddle" WIDTH="74" HEIGHT="16"
+                                                SRC="../comb_files/img40.gif"> есть
+        число способов выбора <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                   SRC="../comb_files/img2.gif"
+        >-го шара, когда уже выбраны предыдущие.
+    <P class="qed">QED</p></Div>
+<div class="corollary"><B>Следствие 1. </B>
+    <A NAME="co1"></A>Если в множестве <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                            SRC="../comb_files/img18.gif"> элементов, то существует ровно <IMG
+            ALIGN="bottom" WIDTH="18" HEIGHT="14"
+            SRC="../comb_files/img41.gif"> <I class="incide">перестановок</I><A NAME="213"></A><A NAME="214"></A>
+    этих элементов.
+</Div>
+<Div class="proof"><B>Доказательство.</b> Перестановка&nbsp;&#151; результат выбора без возвращения
+    и с учётом порядка <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                            SRC="../comb_files/img18.gif"
+    > элементов
+    из <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+            SRC="../comb_files/img18.gif"
+    >. Поэтому общее число перестановок равно <IMG ALIGN="absmiddle" WIDTH="63" HEIGHT="20"
+                                                   SRC="../comb_files/img42.gif">
+    <P class="qed">QED</p></Div>
+<div class="exer"><B>Упражнение 3.</B>
+    <A NAME="up2"></A>Найти, сколько всего возможно различных результатов в&nbsp;следующих экспериментах:
+    <DL compact>
+        <DT>а)
+        <DD>из колоды в 36 карт без возвращения, с учётом порядка вынимают три карты;
+        <DT>б)
+        <DD>Вася, Петя, Оля и Лена занимают какие-то четыре из десяти мест в классе;
+        <DT>в)
+        <DD>из русского алфавита выбирают четыре разные буквы и составляют слово;
+        <DT>г)
+        <DD>из различных цифр, не равных нулю, составляется трёхзначное число.
+    </DL>
+</Div>
+<P>
+<H3><A NAME="222"></A><A NAME="223"></A><A NAME="SECTION000214">
+    Выбор без возвращения и без учёта порядка (Сочетание без повторений) </A></H3>
+
+Сколькими способами из 100 митингующих школьников можно арестовать 10?
+
+<div class="teor"><B>Теорема 3. </B>
+    <A NAME="th3"></A>Общее количество различных наборов при выборе&nbsp;<IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                                              SRC="../comb_files/img2.gif">
+    элементов из <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14" SRC="../comb_files/img18.gif"> без возвращения и без учёта
+    порядка равняется
+    <P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="171" HEIGHT="58"
+                           SRC="../comb_files/img44.gif">
+    <P>и называется <I class="incide">числом сочетаний</I><A NAME="231"></A><A NAME="232"></A> из
+        <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14" SRC="../comb_files/img18.gif"> элементов по <IMG ALIGN="bottom"
+                                                                                                 WIDTH="12" HEIGHT="14"
+                                                                                                 SRC="../comb_files/img2.gif">
+        элементов.</Div>
+<Div class="proof"><B>Доказательство.</b> Согласно <A HREF="node3.html#co1">следствию 1</A>,
+    <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14" SRC="../comb_files/img2.gif"> различных номеров шаров можно
+    упорядочить <IMG ALIGN="bottom" WIDTH="17" HEIGHT="14" SRC="../comb_files/img45.gif"> способами.
+    Поэтому из каждого набора, выбранного без возвращения и без учёта порядка,
+    можно образовать <IMG ALIGN="bottom" WIDTH="17" HEIGHT="14" SRC="../comb_files/img45.gif"> наборов, отличающихся друг
+    от друга
+    порядком следования номеров. Т.е. при выборе без возвращения и с учётом порядка
+    возможно в <IMG ALIGN="bottom" WIDTH="17" HEIGHT="14" SRC="../comb_files/img45.gif"> раз больше наборов, чем при выборе
+    без учёта порядка.
+    Поэтому число наборов при выборе без учёта порядка равно <IMG ALIGN="absmiddle" WIDTH="48" HEIGHT="22"
+                                                                  SRC="../comb_files/img46.gif">
+    <P class="qed">QED</p></Div>
+<div class="exer"><B>Упражнение 4.</B>
+    <A NAME="up3"></A>Найти, сколько всего возможно различных результатов в&nbsp;следующих экспериментах:
+    <DL compact>
+        <DT>а)
+        <DD>из колоды в 36 карт без возвращения, без учёта порядка вынимают три карты;
+        <DT>б)
+        <DD>из русского алфавита выбрасывают четыре буквы.
+    </DL>
+</Div>
+<H3><A NAME="241"></A><A NAME="242"></A>
+    <A NAME="SECTION000215">Выбор с возвращением и с учётом порядка - (Размещение с повторением)</A></H3>
+Обозначается А с чертой n от k. В литературе чаще пишит формулу. Пример: сколько комбинаций на кодовом замке из 4 цифр.<br>
+<Div class="teor"><A NAME="th4"></A><B>&nbsp;Теорема 4. </B>
+    Общее количество различных наборов при выборе <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                       SRC="../comb_files/img2.gif"> элементов из <IMG ALIGN="bottom"
+                                                                                                    WIDTH="13"
+                                                                                                    HEIGHT="14"
+                                                                                                    SRC="../comb_files/img18.gif">
+    с возвращением и с учётом порядка равняется&nbsp;<IMG ALIGN="bottom" WIDTH="21" HEIGHT="18"
+                                                          SRC="../comb_files/img47.gif">.
+</Div>
+<Div class="proof"><B>Доказательство.</b>
+    Первый шар можно выбрать <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                  SRC="../comb_files/img18.gif"> способами. При каждом из этих
+    способов второй шар можно выбрать также <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                 SRC="../comb_files/img18.gif"> способами,
+    и так <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14" SRC="../comb_files/img2.gif"> раз. Общее число наборов равно
+    <IMG ALIGN="bottom" WIDTH="134" HEIGHT="18" SRC="../comb_files/img48.gif">.<P class="qed">QED</p></Div>
+<div class="exer"><B>Упражнение 5.</B>
+    <A NAME="up4"></A>Найти, сколько всего возможно различных результатов в&nbsp;следующих экспериментах:
+    <DL compact>
+        <DT>а)
+        <DD>из колоды в 36 карт тянут три раза карту с учётом порядка и с возвращением;
+        <DT>б)
+        <DD>пятизначное число составляется из одних нечётных цифр;
+        <DT>в)
+        <DD>обезьяна напечатала на машинке слово из десяти букв.
+    </DL>
+</div>
+<H3><A NAME="253"></A><A NAME="254"></A>
+    <A NAME="SECTION000216">Выбор с возвращением и без учёта порядка (Сочетание с повторениеми)</A></H3>
+
+Обозначается С с чертой n от k. Пример: Сколькими способами можно купить 20 пироженных 4 видов?
+
+<Div class="text">Рассмотрим урну с&nbsp;двумя пронумерованными шарами и перечислим результаты выбора двух
+    шариков из этой урны при выборе с возвращением.
+    <p class="center">
+    <TABLE CELLPADDING=3 BORDER="1">
+        <TR VALIGN="BASELINE">
+            <TD ALIGN="CENTER" NOWRAP>с учётом порядка</TD>
+            <TD ALIGN="LEFT" NOWRAP>без учёта порядка</TD>
+        </TR>
+        <TR VALIGN="center">
+            <TD ALIGN="CENTER" NOWRAP>(1,1)</TD>
+            <TD ALIGN="CENTER" NOWRAP>(1,1)&nbsp;</TD>
+        </TR>
+        <TR VALIGN="center">
+            <TD ALIGN="CENTER" NOWRAP>(2,2)</TD>
+            <TD ALIGN="CENTER" NOWRAP>(2,2)&nbsp;</TD>
+        </TR>
+        <TR VALIGN="center">
+            <TD ALIGN="CENTER" NOWRAP>
+                (1,2)<br>
+                (2,1)
+            </TD>
+            <TD ALIGN="LEFT" NOWRAP>&nbsp;<BIG class="LARGE">}</Big>&nbsp;&nbsp;&nbsp;&nbsp; (1,2)&nbsp;&nbsp; &nbsp;&nbsp;
+                &nbsp;&nbsp;
+            </TD>
+        </TR>
+    </TABLE>
+    </p>
+    <P>Видим, что в схеме &#171;без учёта порядка&#187; получилось три различных
+        результата, в отличие от четырёх результатов в&nbsp;схеме &#171;с учётом порядка&#187;.
+        Заметим также, что никаким делением на &#171;число каких-нибудь перестановок&#187;,
+        которое помогло избавиться от учёта порядка при выборе без возвращения,
+        число 3 из числа 4 получить не&nbsp;удастся.</Div>
+<Div class="teor"><A NAME="th5"></A><B>&nbsp;&nbsp;Теорема 5. </B>
+    Общее количество различных наборов при выборе <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                       SRC="../comb_files/img2.gif"> элементов из <IMG ALIGN="bottom"
+                                                                                                    WIDTH="13"
+                                                                                                    HEIGHT="14"
+                                                                                                    SRC="../comb_files/img18.gif">
+    с возвращением и без учёта порядка равняется
+    <P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="139" HEIGHT="42"
+                           SRC="../comb_files/img49.gif"></div>
+<div class="exer"><B>Упражнение 6. </B>
+    <A NAME="up5"></A>Проверить, что при <IMG ALIGN="bottom" WIDTH="45" HEIGHT="14"
+                                              SRC="../comb_files/img50.gif"> и <IMG ALIGN="bottom" WIDTH="44" HEIGHT="14"
+                                                                                 SRC="../comb_files/img51.gif"
+    > получается ровно 3.
+</div>
+<Div class="proof"><B>Доказательство.</b> Рассмотрим подробно, чем отличаются друг от друга два
+    разных результата такой схемы выбора.
+    Нам не важен порядок номеров, т.е. мы учитываем только,
+    сколько раз в нашем наборе из <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                       SRC="../comb_files/img2.gif"> номеров шаров появился каждый номер.
+    Поэтому результат выбора можно представить набором
+    чисел <IMG ALIGN="absmiddle" WIDTH="109" HEIGHT="18"
+               SRC="../comb_files/img52.gif">, в&nbsp;котором
+    <IMG ALIGN="absmiddle" WIDTH="17" HEIGHT="17" SRC="../comb_files/img53.gif">&nbsp;&#151;
+    число появлений шара номер <IMG ALIGN="bottom" WIDTH="8" HEIGHT="14"
+                                    SRC="../comb_files/img54.gif"> в&nbsp;наборе,
+    и <IMG ALIGN="absmiddle" WIDTH="133" HEIGHT="17" SRC="../comb_files/img55.gif">.
+    Числа <IMG ALIGN="absmiddle" WIDTH="17" HEIGHT="17"
+               SRC="../comb_files/img53.gif"> принимают значения из <IMG ALIGN="absmiddle" WIDTH="60" HEIGHT="20"
+                                                                      SRC="../comb_files/img56.gif">.
+    Два результата выбора в схеме выбора с возвращением и без учёта порядка
+    различаются,
+    если соответствующие им наборы <IMG ALIGN="absmiddle" WIDTH="109" HEIGHT="18"
+                                        SRC="../comb_files/img52.gif"> не совпадают (порядок следования элементов <IMG
+            ALIGN="absmiddle" WIDTH="17" HEIGHT="17"
+            SRC="../comb_files/img53.gif"> учитывается).
+    <P>Представим себе другой эксперимент, имеющий точно такие же результаты,
+        и посчитаем их количество.
+        Есть <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                  SRC="../comb_files/img18.gif"> ящиков, в которых размещаются <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                                                 SRC="../comb_files/img2.gif"> шаров. Нас
+        интересует только число шаров в каждом ящике.
+        Результатом эксперимента снова является набор
+        чисел <IMG ALIGN="absmiddle" WIDTH="109" HEIGHT="18"
+                   SRC="../comb_files/img52.gif">, где <IMG ALIGN="absmiddle" WIDTH="17" HEIGHT="17"
+                                                         SRC="../comb_files/img53.gif"> равно числу шаров в ящике с&nbsp;номером
+        <IMG ALIGN="absmiddle" WIDTH="8" HEIGHT="14"
+             SRC="../comb_files/img54.gif">, и&nbsp;<IMG ALIGN="absmiddle" WIDTH="133" HEIGHT="17"
+                                                      SRC="../comb_files/img55.gif">. Числа <IMG ALIGN="absmiddle"
+                                                                                              WIDTH="17" HEIGHT="17"
+                                                                                              SRC="../comb_files/img53.gif">
+        принимают натуральные значения или равны нулю.
+    <P>А теперь изобразим результат такого размещения в виде схемы, в&nbsp;которой
+        вертикальные линии обозначают перегородки между ящиками, а точки&nbsp;&#151;
+        находящиеся в ящиках шары:
+    <P class="CENTER">
+        <IMG ALIGN="absmiddle" WIDTH="493" HEIGHT="33" SRC="../comb_files/img17.gif">
+    <p>Мы видим результат размещения девяти шаров по семи ящикам. Первый ящик
+        содержит три шара, второй и шестой ящики пусты, третий ящик содержит один шар,
+        в&nbsp;четвёртом и пятом ящиках лежит по два шара.
+        Переложим один шар из первого ящика во второй и
+        изобразим таким же образом ещё два результата размещения:
+    <P class="CENTER">
+        <IMG ALIGN="absmiddle" WIDTH="493" HEIGHT="33" SRC="../comb_files/img16.gif"><br>
+        <IMG ALIGN="absmiddle" WIDTH="493" HEIGHT="33" SRC="../comb_files/img15.gif">
+    <p>Видим, что все размещения можно получить, меняя между собой шары и
+        перегородки, или расставляя <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                         SRC="../comb_files/img2.gif"> шаров на <IMG ALIGN="absmiddle" WIDTH="74"
+                                                                                  HEIGHT="16"
+                                                                                  SRC="../comb_files/img57.gif"> местах.
+        Число <IMG ALIGN="absmiddle" WIDTH="74" HEIGHT="16"
+                   SRC="../comb_files/img57.gif"> получается так: у <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                                                                      SRC="../comb_files/img18.gif"> ящиков есть ровно <IMG
+                ALIGN="absmiddle" WIDTH="43" HEIGHT="16"
+                SRC="../comb_files/img58.gif"> перегородка,
+        считая крайние, но из них перемещать можно лишь <IMG ALIGN="absmiddle" WIDTH="43" HEIGHT="17"
+                                                             SRC="../comb_files/img33.gif"> внутреннюю перегородку.
+        Таким образом, имеется <IMG ALIGN="absmiddle" WIDTH="74" HEIGHT="16"
+                                    SRC="../comb_files/img57.gif"> мест, которые
+        можно занять шарами либо внутренними перегородками. Перебрав все возможные
+        способы расставить <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                SRC="../comb_files/img2.gif"> шаров на этих <IMG ALIGN="absmiddle" WIDTH="74" HEIGHT="16"
+                                                                              SRC="../comb_files/img57.gif"> местах
+        (заполняя оставшиеся места перегородками), переберем все нужные размещения.
+    <P>Осталось заметить, что
+        способов расставить <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                 SRC="../comb_files/img2.gif"
+        > шаров на <IMG ALIGN="absmiddle" WIDTH="74" HEIGHT="16"
+                        SRC="../comb_files/img57.gif"> местах существует
+    <P class="CENTER"><IMG ALIGN="absmiddle" WIDTH="139" HEIGHT="42"
+                           SRC="../comb_files/img49.gif"></P>Именно столько есть способов выбрать из <IMG ALIGN="absmiddle"
+                                                                                                       WIDTH="74"
+                                                                                                       HEIGHT="16"
+                                                                                                       SRC="../comb_files/img57.gif">
+    номеров мест <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                      SRC="../comb_files/img2.gif"> номеров мест для шаров.
+</Div>
+<div class="exer"><B>Упражнение 7.</B>
+    <A NAME="up6"></A>
+    <DL compact>
+        <DT>а)
+        <DD>Найти количество способов разложить натуральное число <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                                       SRC="../comb_files/img2.gif"> в сумму
+            <IMG ALIGN="bottom" WIDTH="13" HEIGHT="14"
+                 SRC="../comb_files/img18.gif">
+            целых неотрицательных слагаемых, если важен порядок следования этих слагаемых.
+        <DT>б)
+        <DD>Найти число различных производных порядка <IMG ALIGN="bottom" WIDTH="12" HEIGHT="14"
+                                                           SRC="../comb_files/img2.gif"> функции <IMG ALIGN="bottom"
+                                                                                                   WIDTH="13"
+                                                                                                   HEIGHT="14"
+                                                                                                   SRC="../comb_files/img18.gif">
+            переменных.
+        <DT>в)
+        <DD>Найти число возможных результатов подбрасывания двух игральных костей, если
+            кости считаются неразличимыми. То же самое для трёх игральных костей.
+    </DL>
+</Div>
+<P>
+<HR>

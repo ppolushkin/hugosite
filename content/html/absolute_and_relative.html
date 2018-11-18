@@ -1,0 +1,123 @@
+---
+title: "Absolute and relative position"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css basic"]
+---
+
+<div class="container">
+
+    <div class="bg-info block">
+        Here is an example how <i>relative</i> and <i>absolute</i> works together.
+        <p>
+            An absolutely positioned element is actually placed relative to the boundaries of its closest positioned (~
+            relative positioned) ancestor
+        </p>
+        <p>
+            More info:
+            <a href="https://www.safaribooksonline.com/library/view/css3-the-missing/9781449339456/ch15.html">https://www.safaribooksonline.com/library/view/css3-the-missing/9781449339456/ch15.html</a>
+        </p>
+
+    </div>
+
+    <code>
+        <pre style='color:#d1d1d1;background:#000000;'><span style='color:#008073; '>&lt;!DOCTYPE html></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>html</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>head</span><span
+                    style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>meta</span> charset<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"UTF-8"</span><span
+                    style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>title</span><span
+                    style='color:#ff8906; '>></span>Stacking and float<span style='color:#ff8906; '>&lt;/</span><span
+                    style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>style</span><span
+                    style='color:#ff8906; '> type="text/css"></span>
+
+        <span style='color:#d2cd86; '>.</span>c <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>float</span><span style='color:#d2cd86; '>:</span> left<span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>position</span><span style='color:#d2cd86; '>:</span> relative<span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>0.75</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>#</span><span style='color:#00a800; '>00b3ee</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed <span
+                    style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>margin</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>10</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>img</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>50</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>50</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border-radius</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>50</span><span style='color:#006600; '>%</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>position</span><span style='color:#d2cd86; '>:</span> absolute<span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>top</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>30</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>right</span><span style='color:#d2cd86; '>:</span> <span
+                    style='color:#00a800; '>30</span><span style='color:#006600; '>px</span><span
+                    style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>style</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>head</span><span
+                    style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>body</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'p'</span><span
+                    style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"c"</span><span
+                    style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>img</span> src<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"http://static5.businessinsider.com/image/4f3433986bb3f7b67a00003c-480/cute-cat.jpg"</span><span
+                    style='color:#ff8906; '>/></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span
+                    style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"c"</span><span
+                    style='color:#ff8906; '>></span>
+        <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>img</span> src<span
+                    style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"http://static5.businessinsider.com/image/4f3433986bb3f7b67a00003c-480/cute-cat.jpg"</span><span
+                    style='color:#ff8906; '>/></span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>body</span><span
+                    style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>html</span><span
+                    style='color:#ff8906; '>></span>
+</pre>
+
+        <a href="https://jsbin.com/miwuta/edit?html,output" class="btn btn-lg btn-success">Try it in jsbin.com</a>
+
+    </code>
+
+
+</div>

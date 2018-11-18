@@ -1,0 +1,106 @@
+---
+title: "Merge Sort"
+date: 2018-06-14
+draft: false
+categories: ["Алгоритмы"]
+tags: ["Comparision Sorts"]
+---
+
+<div class="container">
+
+    <h2>Overall idea</h2>
+
+    <img src="../img/mergeSort6.png"/>
+    <img src="../img/mergeSort2.png"/>
+    <img src="../img/mergeSort.png"/>
+
+    <h2>Merge principle</h2>
+    <div class="lead">
+        Our MERGE procedure takes time  O(n), where n is the total
+        number of elements being merged, and it works as follows. Returning to our card-
+        playing motif, suppose we have two piles of cards face up on a table. Each pile is
+        sorted, with the smallest cards on top. We wish to merge the two piles into a single
+        sorted output pile, which is to be face down on the table. Our basic step consists
+        of choosing the smaller of the two cards on top of the face-up piles, removing it
+        from its pile (which exposes a new top card), and placing this card face down onto
+        the output pile. We repeat this step until one input pile is empty, at which time
+        we just take the remaining input pile and place it face down onto the output pile.
+        Computationally, each basic step takes constant time, since we are comparing just
+        the two top cards. Since we perform at most n basic steps, merging takes O(n)
+        time.
+    </div>
+    <img src="../img/mergeSort3.png"/>
+
+    <h2>Complexity Analysis</h2>
+
+    <img src="../img/mergeSort4.png"/>
+    <img src="../img/mergeSort5.png"/>
+
+
+    <h2>Example</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif"/>
+
+    <table class="table">
+    </table>
+
+    <h2>Java implementation</h2>
+
+    <div>
+        <pre style='color:#d1d1d1;background:#000000;'><span style='color:#e66170; font-weight:bold; '>static</span> void mergeSort(int[] a, int low, int high) <span style='color:#b060b0; '>{</span>
+        <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>low <span style='color:#d2cd86; '>=</span><span style='color:#d2cd86; '>=</span> high<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>return</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#bb7977; '>int</span> middle <span style='color:#d2cd86; '>=</span> <span style='color:#d2cd86; '>(</span>low <span style='color:#d2cd86; '>+</span> high<span style='color:#d2cd86; '>)</span> <span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span><span style='color:#d2cd86; '>></span> <span style='color:#008c00; '>1</span><span style='color:#b060b0; '>;</span>
+
+        mergeSort<span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>,</span> low<span style='color:#d2cd86; '>,</span> middle<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        mergeSort<span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>,</span> middle <span style='color:#d2cd86; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#d2cd86; '>,</span> high<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+        merge<span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>,</span> low<span style='color:#d2cd86; '>,</span> middle<span style='color:#d2cd86; '>,</span> high<span style='color:#d2cd86; '>)</span><span style='color:#b060b0; '>;</span>
+    <span style='color:#b060b0; '>}</span>
+
+
+    <span style='color:#e66170; font-weight:bold; '>static</span> void merge(int[] a, int low, int middle, int high) <span style='color:#b060b0; '>{</span>
+        <span style='color:#9999a9; '>//</span>
+        <span style='color:#9999a9; '>// left a[low..:middle]</span>
+        <span style='color:#9999a9; '>//</span>
+        <span style='color:#bb7977; '>int</span> l <span style='color:#d2cd86; '>=</span> low<span style='color:#b060b0; '>;</span>
+
+        <span style='color:#9999a9; '>//</span>
+        <span style='color:#9999a9; '>// right a[middle+1..:high]</span>
+        <span style='color:#9999a9; '>//</span>
+        <span style='color:#bb7977; '>int</span> r <span style='color:#d2cd86; '>=</span> middle <span style='color:#d2cd86; '>+</span> <span style='color:#008c00; '>1</span><span style='color:#b060b0; '>;</span>
+
+        <span style='color:#bb7977; '>int</span> len <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>1</span> <span style='color:#d2cd86; '>+</span> high <span style='color:#d2cd86; '>-</span> low<span style='color:#b060b0; '>;</span>
+        <span style='color:#bb7977; '>int</span><span style='color:#d2cd86; '>[</span><span style='color:#d2cd86; '>]</span> res <span style='color:#d2cd86; '>=</span> <span style='color:#e66170; font-weight:bold; '>new</span> <span style='color:#bb7977; '>int</span><span style='color:#d2cd86; '>[</span>len<span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+
+        <span style='color:#e66170; font-weight:bold; '>for</span> <span style='color:#d2cd86; '>(</span><span style='color:#bb7977; '>int</span> indx <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span> indx <span style='color:#d2cd86; '>&lt;</span> len<span style='color:#b060b0; '>;</span> indx<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>l <span style='color:#d2cd86; '>></span> middle<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>[</span>r<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>r <span style='color:#d2cd86; '>></span> high<span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>[</span>l<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>[</span>l<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>&lt;</span> a<span style='color:#d2cd86; '>[</span>r<span style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>[</span>l<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#e66170; font-weight:bold; '>if</span> <span style='color:#d2cd86; '>(</span>a<span style='color:#d2cd86; '>[</span>l<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>></span> a<span style='color:#d2cd86; '>[</span>r<span style='color:#d2cd86; '>]</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+                res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>[</span>r<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span> <span style='color:#e66170; font-weight:bold; '>else</span> <span style='color:#b060b0; '>{</span>
+                res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> a<span style='color:#d2cd86; '>[</span>l<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#b060b0; '>}</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>for</span> <span style='color:#d2cd86; '>(</span><span style='color:#bb7977; '>int</span> indx <span style='color:#d2cd86; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#b060b0; '>;</span> indx <span style='color:#d2cd86; '>&lt;</span> len<span style='color:#b060b0; '>;</span> indx<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>)</span> <span style='color:#b060b0; '>{</span>
+            a<span style='color:#d2cd86; '>[</span>low<span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>+</span><span style='color:#d2cd86; '>]</span> <span style='color:#d2cd86; '>=</span> res<span style='color:#d2cd86; '>[</span>indx<span style='color:#d2cd86; '>]</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+    <span style='color:#b060b0; '>}</span>
+</pre>
+    </div>
+    <h2>Possible improvement</h2>
+    <div class="lead">
+        Although merge sort runs in O(n*lg(n)) worst-case time and insertion sort runs
+        in O(n^2) worst-case time, the constant factors in insertion sort can make it faster
+        in practice for small problem sizes on many machines. Thus, it makes sense to
+        coarsen the leaves of the recursion by using insertion sort within merge sort when
+        subproblems become sufficiently small. Consider a modification to merge sort in
+        which n=k sublists of length k are sorted using insertion sort and then merged
+        using the standard merging mechanism, where k is a value to be determined.
+    </div>
+</div>

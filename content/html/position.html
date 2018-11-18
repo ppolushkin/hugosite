@@ -1,0 +1,43 @@
+---
+title: "CSS Position property"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css basic"]
+---
+<div class="container">
+    <div class="bg-info block">
+        <p>
+            By default uses <b>Static</b> position.
+        </p>
+
+        <p>The CSS <code class="literal">position</code> property lets you control how and where a web browser displays particular elements. Using <code class="literal">position</code>, you can, for example, place a sidebar anywhere you wish on a page or make sure a navigation bar at the top of the page stays in place even when visitors scroll down the page. CSS offers four types of positioning:</p>
+        <ul class="itemizedlist">
+            <li class="listitem">
+                <p><span class="strong"><strong>Absolute</strong></span>. Absolute positioning lets you determine an element&rsquo;s location by specifying a <code class="literal">left, right, top</code>, or <code class="literal">bottom</code> position in pixels, ems, or percentages.&nbsp;</p>
+                <p>In addition, absolutely positioned elements are completely detached from the flow of the page as determined by the HTML code. In other words, other things on the page don&rsquo;t even know the absolutely positioned element exists. They can even disappear completely underneath absolutely positioned items, if you&rsquo;re not careful.</p>
+            </li>
+            <li class="listitem">
+                <p><span class="strong"><strong>Relative</strong></span>. A relatively positioned element is placed relative to its current position in the HTML flow. So, for example, setting a top value of 20 pixels and left value of 200 pixels on a relatively positioned headline moves that headline 20 pixels down and 200 pixels from the left <span class="emphasis"><em>from wherever it would normally appear</em></span>.</p>
+                <p>Unlike with absolute positioning, other page elements accommodate the old HTML placement of a relatively positioned element. Accordingly, moving an element with relative positioning leaves a &ldquo;hole&rdquo; where the element would have been. That strip is where the relatively positioned box <span class="emphasis"><em>would have</em></span> appeared, before it was given orders to move. The main benefit of relative positioning isn&rsquo;t to move an element, but to set a new point of reference for absolutely positioned elements that are nested inside it.</p>
+            </li>
+            <li class="listitem">
+                <p><span class="strong"><strong>Fixed</strong></span>. A fixed element is locked into place on the screen. It does the same thing as the <code class="literal">fixed</code> value for the <code class="literal">background-attachment</code> property. When a visitor scrolls the page, fixed elements remain onscreen as paragraphs and headlines, while photos disappear off the top of the browser window.</p>
+                <p>Fixed elements are a great way to create a fixed sidebar or replicate the effect of HTML frames, where only a certain portion (frame) of the page scrolls. </p>
+            </li>
+        </ul>
+
+    </div>
+    <div class="bg-warning block">
+        <b>Static</b> elements often called as <mark>"normal"</mark> while others (absolute, relative and fixed) as <mark>"positioned"</mark>.
+    </div>
+
+    <div class="bg-warning block">
+        <div class="note" title="Note">
+            <h3 class="title">Note</h3>
+            <p>Don&rsquo;t try to apply both the <code class="literal">float</code> property and any type of positioning other than static (explained below) or relative to the same style. The <code class="literal">float</code> property and <code class="literal">absolute</code> or <code class="literal">fixed</code> positioning can&rsquo;t work together on the same element.</p>
+        </div>
+    </div>
+
+    <img src="../img/static.png"/>
+</div>

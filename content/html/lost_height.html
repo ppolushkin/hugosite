@@ -1,0 +1,70 @@
+---
+title: "Lost height"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css trics"]
+---
+
+<div class="container">
+    <div class="bg-info block">
+        <p>
+        Here is demonstration how to fix height of <i>div .p</i>. The problem is that browser firstly
+        draw "normal" elements (<i>div .p</i>) and then "float" ones (which is <i>div .c</i> in example).
+        <br/>
+        That's why without tricky hack with <i>.p:after</i> height of .p is zero!
+        </p>
+        <p>
+            More information is here: <a href="http://getbootstrap.com/css/#helper-classes-clearfix">http://getbootstrap.com/css/#helper-classes-clearfix</a>
+        </p>
+    </div>
+
+    <code>
+<pre style='color:#d1d1d1;background:#000000;'>&lt;!DOCTYPE <span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#d2cd86; '>></span>
+&lt;<span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#d2cd86; '>></span>
+&lt;<span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#d2cd86; '>></span>
+    &lt;<span style='color:#e66170; font-weight:bold; '>meta</span> charset="UTF-8"<span style='color:#d2cd86; '>></span>
+    &lt;<span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#d2cd86; '>></span><span style='color:#e66170; font-weight:bold; '>p</span> <span style='color:#e66170; font-weight:bold; '>div</span> height is zero&lt;/<span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#d2cd86; '>></span>
+    &lt;<span style='color:#e66170; font-weight:bold; '>style</span> type="<span style='color:#e66170; font-weight:bold; '>text</span>/css"<span style='color:#d2cd86; '>></span>
+
+        <span style='color:#d2cd86; '>.</span>p <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>1</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>#</span><span style='color:#00a800; '>22b333</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed <span style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#d2cd86; '>.</span>p<span style='color:#b060b0; '>:</span><span style='color:#e66170; font-weight:bold; '>after</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>content</span><span style='color:#d2cd86; '>:</span> <span style='color:#02d045; '>'</span><span style='color:#00c4c4; '> </span><span style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>clear</span><span style='color:#d2cd86; '>:</span> left<span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>display</span><span style='color:#d2cd86; '>:</span> block<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#d2cd86; '>.</span>c <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>1</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed<span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>float</span><span style='color:#d2cd86; '>:</span> left<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+    &lt;/<span style='color:#e66170; font-weight:bold; '>style</span><span style='color:#d2cd86; '>></span>
+&lt;/<span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#d2cd86; '>></span>
+
+&lt;<span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#d2cd86; '>></span>
+
+  &lt;<span style='color:#e66170; font-weight:bold; '>div</span> class='<span style='color:#e66170; font-weight:bold; '>p</span>'<span style='color:#d2cd86; '>></span>
+    &lt;<span style='color:#e66170; font-weight:bold; '>div</span> class='c'<span style='color:#d2cd86; '>></span>
+
+    &lt;/<span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#d2cd86; '>></span>
+    &lt;<span style='color:#e66170; font-weight:bold; '>div</span> class="c"<span style='color:#d2cd86; '>></span>
+    &lt;/<span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#d2cd86; '>></span>
+  &lt;/<span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#d2cd86; '>></span>
+
+&lt;/<span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#d2cd86; '>></span>
+&lt;/<span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#d2cd86; '>></span>
+</pre>
+
+        <a href="https://jsbin.com/jihubi/edit?html,output" class="btn btn-lg btn-success">Try it in jsbin.com</a>
+    </code>
+</div>

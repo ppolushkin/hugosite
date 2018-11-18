@@ -1,0 +1,129 @@
+---
+title: "Stacking of normal and positioned elements"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css trics"]
+---
+
+
+
+<div class="container">
+    <div class="bg-info block">
+        Positioned (absolute, relative, Fixed) elements are always on top of normal (static)
+        <p>
+            More info:
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/Stacking_without_z-index">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Understanding_z_index/Stacking_without_z-index</a>
+            </li>
+            <li>
+                <a href="https://www.safaribooksonline.com/library/view/css3-the-missing/9781449339456/ch15.html#stacking_elements">https://www.safaribooksonline.com/library/view/css3-the-missing/9781449339456/ch15.html#stacking_elements</a>
+            </li>
+        </ul>
+
+        </p>
+
+    </div>
+
+    <code>
+<pre style='color:#d1d1d1;background:#000000;'><span style='color:#008073; '>&lt;!DOCTYPE html></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>html</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>head</span><span
+            style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>meta</span> charset<span
+            style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"UTF-8"</span><span
+            style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>title</span><span
+            style='color:#ff8906; '>></span>Stacking without z-index<span style='color:#ff8906; '>&lt;/</span><span
+            style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>style</span><span
+            style='color:#ff8906; '> type="text/css"></span>
+
+        <span style='color:#d2cd86; '>.</span>a <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>1</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>#</span><span style='color:#00a800; '>22b333</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed <span
+            style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>position</span><span style='color:#d2cd86; '>:</span> absolute<span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>left</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>90</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>top</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>20</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#d2cd86; '>.</span>a<span style='color:#b060b0; '>:</span><span
+            style='color:#e66170; font-weight:bold; '>before</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>content</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#02d045; '>'</span><span style='color:#00c4c4; '>i am absolute or positioned</span><span
+            style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#d2cd86; '>.</span>n <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>100</span><span style='color:#006600; '>px</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>1</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span
+            style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed <span
+            style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span
+            style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#d2cd86; '>.</span>n<span style='color:#b060b0; '>:</span><span
+            style='color:#e66170; font-weight:bold; '>before</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>content</span><span style='color:#d2cd86; '>:</span> <span
+            style='color:#02d045; '>'</span><span style='color:#00c4c4; '>i am static or default</span><span
+            style='color:#02d045; '>'</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>style</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>head</span><span
+            style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>body</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span
+            style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>'a'</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span
+            style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span
+            style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"n"</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span
+            style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>body</span><span
+            style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>html</span><span
+            style='color:#ff8906; '>></span>
+</pre>
+
+        <a href="https://jsbin.com/vujivu/edit?html,output" class="btn btn-lg btn-success">Try it in jsbin.com</a>
+    </code>
+</div>

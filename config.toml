@@ -1,0 +1,45 @@
+baseURL = "http://ppolushkin.github.com/"
+languageCode = "en-us-ru"
+title = "42 notes"
+theme = "beautifulhugo"
+
+[Params]
+homeTitle = "42 developer's notes"
+# subtitle = "Don't panic"
+dateFormat = "January 2, 2006"
+logo = "donotpanic.jpg"
+
+[Author]
+  name = "Pavel Polushkin"
+  website = "ppolushkin.github.com"
+  email = "ppolushkin@gmail.com"
+  github = "ppolushkin"
+
+  [[menu.main]]
+      name = "Tags"
+      url = "tags"
+      weight = 0
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "All"
+      url = "categories"
+      weight = 2
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "Математика"
+      url = "categories/математика"
+      weight = 3
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "Алгоритмы"
+      url = "categories/алгоритмы"
+      weight = 4
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "CSS"
+      url = "categories/css"
+      weight = 5

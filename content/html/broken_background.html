@@ -1,0 +1,65 @@
+---
+title: "Lost height"
+date: 2016-01-01
+draft: false
+categories: ["css"]
+tags: ["css trics"]
+---
+<div class="container">
+    <div class="bg-info block">
+        <p>To the consternation of many web designers, backgrounds and borders don&rsquo;t react to floated elements the same way content does. Say you float an element&mdash;a sidebar for example&mdash;to the right. The content below the sidebar moves up and wraps around it, just as it should. But if that content has a background or border set on it, then that background or border actually appears <span class="emphasis"><em>underneath</em></span> the floated sidebar (<a class="xref" title="Figure&nbsp;7-16.&nbsp;In this example, there&rsquo;s an &lt;h1&gt; tag with a background color and an &lt;h2&gt; tag with a border (left). Adding overflow: hidden; to the style for the &lt;h1&gt; tag (right) prevents the headline from appearing under the floating element (sidebar)." href="https://www.safaribooksonline.com/library/view/CSS3:+The+Missing+Manual,+3rd+Edition/9781449339456/ch07.html#in_this_example_theres_an_lth1gt_tag_wit">Figure&nbsp;7-16</a>, left). In essence, a web browser wraps the text around the float, but not the border or background. Believe it or not, this is absolutely kosher and (according to the rules) how it&rsquo;s supposed to work. Of course, you may not want to follow these rules; you might want to have the border or background stop when it reaches the floated element (<a class="xref" title="Figure&nbsp;7-16.&nbsp;In this example, there&rsquo;s an &lt;h1&gt; tag with a background color and an &lt;h2&gt; tag with a border (left). Adding overflow: hidden; to the style for the &lt;h1&gt; tag (right) prevents the headline from appearing under the floating element (sidebar)." href="https://www.safaribooksonline.com/library/view/CSS3:+The+Missing+Manual,+3rd+Edition/9781449339456/ch07.html#in_this_example_theres_an_lth1gt_tag_wit">Figure&nbsp;7-16</a>, right). With a little CSS magic, you can do it.</p>
+        <p>First, you need to add one rule to the style that has background or borders running underneath the float. Once you locate the style, add this line: <code class="literal">overflow: hidden;</code>. The <code class="literal">overflow</code> property (<a class="xref" title="Controlling the Tap with the Overflow Property" href="https://www.safaribooksonline.com/library/view/CSS3:+The+Missing+Manual,+3rd+Edition/9781449339456/ch07.html#controlling_the_tap_with_the_overflow_pr">Controlling the Tap with the Overflow Property</a>) makes any background or border that extends underneath the float disappear.</p>
+        <p>Another approach is to add a borderline around the floated element; when you make the borderline thick enough and match its color to the background color of the page, the border looks just like empty space&mdash;even though it&rsquo;s covering and hiding the background color and borderlines that are extending below it.</p>
+    </div>
+
+    <code>
+<pre style='color:#d1d1d1;background:#000000;'><span style='color:#008073; '>&lt;!DOCTYPE html></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>meta</span> charset<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"UTF-8"</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>Fix overlapped background of header<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>title</span><span style='color:#ff8906; '>></span>
+    <span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>style</span><span style='color:#ff8906; '> type="text/css"></span>
+
+        <span style='color:#d2cd86; '>.</span>aside <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>height</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>200</span><span style='color:#006600; '>px</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>width</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>200</span><span style='color:#006600; '>px</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>1</span><span style='color:#006600; '>px</span> dashed<span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>float</span><span style='color:#d2cd86; '>:</span> right<span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>#</span><span style='color:#00a800; '>d4ff9c</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>opacity</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>0.75</span><span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+
+        <span style='color:#e66170; font-weight:bold; '>h1</span> <span style='color:#b060b0; '>{</span>
+            <span style='color:#904050; '>background-color</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>#</span><span style='color:#00a800; '>00b3ee</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>border</span><span style='color:#d2cd86; '>:</span> <span style='color:#00a800; '>5</span><span style='color:#006600; '>px</span> solid <span style='color:#00a800; '>#</span><span style='color:#00a800; '>999966</span><span style='color:#b060b0; '>;</span>
+            <span style='color:#904050; '>overflow</span><span style='color:#d2cd86; '>:</span> hidden<span style='color:#b060b0; '>;</span>
+        <span style='color:#b060b0; '>}</span>
+    <span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>style</span><span style='color:#ff8906; '>></span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>head</span><span style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span> class<span style='color:#d2cd86; '>=</span><span style='color:#00c4c4; '>"aside"</span><span style='color:#ff8906; '>></span>
+    Floated panel with some text
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>h1</span><span style='color:#ff8906; '>></span>Header with overlapped background<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>h1</span><span style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;</span><span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#ff8906; '>></span>
+    First, you need to add one rule to the style that has background or borders running underneath the float<span style='color:#00a800; '>.</span> Once you
+    locate the style, add this line: overflow: hidden;. The overflow property (Controlling the Tap with the Overflow
+    Property) makes any background or border that extends underneath the float disappear<span style='color:#00a800; '>.</span>
+
+    Another approach is to add a borderline around the floated element; when you make the borderline thick enough and
+    match its color to the background color of the page, the border looks just like empty space—even though it’s
+    covering and hiding the background color and borderlines that are extending below it<span style='color:#00a800; '>.</span>
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>div</span><span style='color:#ff8906; '>></span>
+
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>body</span><span style='color:#ff8906; '>></span>
+
+
+<span style='color:#ff8906; '>&lt;/</span><span style='color:#e66170; font-weight:bold; '>html</span><span style='color:#ff8906; '>></span>
+</pre>
+        <a href="https://jsbin.com/bugapo/edit?html,output" class="btn btn-lg btn-success">Try it in jsbin.com</a>
+    </code>
+</div>
