@@ -17,7 +17,7 @@ logo = "donotpanic.jpg"
 [Author]
   name = "Pavel Polushkin"
   website = "ppolushkin.github.com"
-  email = "ppolushkin@gmail.com"
+  email = "pavel.polushkin@gmail.com"
   github = "ppolushkin"
 
   [[menu.main]]
