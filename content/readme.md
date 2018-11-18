@@ -4,7 +4,7 @@ date: 2018-11-19T00:21:24+03:00
 draft: false
 ---
 # 42 developer's notes
-This is [Hugo](https://gohugo.io/documentation/) based resources for [ppolushkin.github.com](ppolushkin.github.com)
+This is [Hugo](https://gohugo.io/documentation/) based resources for [ppolushkin.github.com](http://ppolushkin.github.com)
 resource.
 
 ### Development
@@ -17,7 +17,7 @@ and open [localhost:1313](http://localhost:1313) site.
 ```bash
 hugo
 ```
-- Go to public folder, commit and push to [ppolushkin.github.com](ppolushkin.github.com)
+- Go to public folder, commit and push to [ppolushkin.github.com](http://ppolushkin.github.com)
 
 ```bash
 cd public
