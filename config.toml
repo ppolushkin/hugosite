@@ -2,6 +2,11 @@ baseURL = "http://ppolushkin.github.com/"
 languageCode = "en-us-ru"
 title = "42 notes"
 theme = "beautifulhugo"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
 
 [Params]
 homeTitle = "42 developer's notes"
@@ -19,6 +24,11 @@ logo = "donotpanic.jpg"
       name = "Tags"
       url = "tags"
       weight = 0
+
+  [[menu.main]]
+      name = "Readme"
+      url = "readme"
+      weight = 10
 
   [[menu.main]]
       parent = "Categories"
