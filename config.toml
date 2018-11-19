@@ -50,6 +50,12 @@ logo = "donotpanic.jpg"
 
   [[menu.main]]
       parent = "Categories"
+      name = "Java"
+      url = "categories/java"
+      weight = 5
+
+  [[menu.main]]
+      parent = "Categories"
       name = "CSS"
       url = "categories/css"
-      weight = 5
+      weight = 6
