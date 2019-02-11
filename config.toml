@@ -59,3 +59,10 @@ logo = "donotpanic.jpg"
       name = "CSS"
       url = "categories/css"
       weight = 6
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "Azure"
+      url = "categories/azure"
+      weight = 7
+
