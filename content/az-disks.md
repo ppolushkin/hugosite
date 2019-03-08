@@ -8,8 +8,6 @@ tags: ["az cli", "virtual machine"]
 
 [Microsoft documentation](https://docs.microsoft.com/ru-ru/azure/virtual-machines/linux/about-disks-and-vhds)
 
-
-
 az vm disk attach \
     --resource-group "psdemo-rg" \
     --vm-name "psdemo-linux-2" \

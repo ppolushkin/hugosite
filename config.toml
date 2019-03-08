@@ -66,3 +66,8 @@ logo = "donotpanic.jpg"
       url = "categories/azure"
       weight = 7
 
+  [[menu.main]]
+      parent = "Categories"
+      name = "AZ-203"
+      url = "categories/az-203"
+      weight = 8
