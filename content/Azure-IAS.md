@@ -36,10 +36,18 @@ tags: ["10%-15%"]
 [Azure cli](https://docs.microsoft.com/en-us/azure/batch/quick-create-cli)  
 [Portal](https://docs.microsoft.com/en-us/azure/batch/quick-create-portal)  
 
-todo
-
 ### Write code to run an Azure Batch Services batch job
+[batch application packages](https://docs.microsoft.com/ru-ru/azure/batch/batch-application-packages)
+[News Analyzer](https://github.com/ppolushkin/newsAnalyzer)
 
-todo
+## Create containerized solutions
+
+### Create an Azure Managed Kubernetes Service (AKS) cluster
+
+### Create container images for solutions
+
+### Publish an image to the Azure Container Registry
+
+### Run containers by using Azure Container Instance or AKS
 
 [Exam description](https://www.microsoft.com/en-us/learning/exam-az-203.aspx)
