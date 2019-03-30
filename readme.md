@@ -12,23 +12,7 @@ Run ```hugo server D```
 and open [localhost:1313](http://localhost:1313) site.
 
 ## Publish
-- Build public folder by running ``hugo`` command
 
 ```bash
-hugo
-```
-
-- Go to public folder, commit and push to [ppolushkin.github.com](http://ppolushkin.github.com)
-
-```bash
-cd public
-git commit -am 'comment'
-git push origin master
-```
-- Go to root folder, commit and push this root repository
-
-```bash
-cd ..
-git commit -am 'comment'
-git push origin master
+./publish
 ```
