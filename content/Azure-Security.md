@@ -22,7 +22,7 @@ https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-m
 
 ### Implement Managed Service Identity (MSI)/Service Principal authentication 
 
-
+todo:
 
 ## Implement access control
 
