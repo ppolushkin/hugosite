@@ -27,3 +27,5 @@ into project root. Now you can debug.
 
 - [if navigation to declaration is not working](https://stackoverflow.com/questions/47995468/vscode-c-sharp-go-to-definition-f12-not-working)
 Use ctrl-shift-P and select "OmniSharp: Select Project" to select the correct project.
+
+- [how to build stand-along dotnetApp](https://opensource.com/article/17/11/net-linux)
