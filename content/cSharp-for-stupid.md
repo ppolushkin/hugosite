@@ -13,3 +13,5 @@ tags: ["dotNet", "C#"]
  [Microsoft tutorial](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/introduction-to-classes)
 
  [С# concepts](https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/concepts/)
+
+ [How to create MVC web app](https://docs.microsoft.com/ru-ru/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-2.2&tabs=visual-studio-code)
