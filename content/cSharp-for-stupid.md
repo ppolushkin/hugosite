@@ -15,3 +15,5 @@ tags: ["dotNet", "C#"]
  [С# concepts](https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/concepts/)
 
  [How to create MVC web app](https://docs.microsoft.com/ru-ru/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-2.2&tabs=visual-studio-code)
+
+ [How to creaate web API app](https://docs.microsoft.com/ru-ru/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.2&tabs=visual-studio-code)
