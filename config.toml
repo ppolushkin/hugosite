@@ -71,3 +71,9 @@ logo = "donotpanic.jpg"
       name = "AZ-203"
       url = "categories/az-203"
       weight = 8
+
+  [[menu.main]]
+      parent = "Categories"
+      name = "az-300"
+      url = "categories/az-300"
+      weight = 9
